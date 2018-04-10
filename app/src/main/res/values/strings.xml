@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- App -->
+    <string name="app_name">Comics Collection</string>
+    <string name="app_name_launcher">Comics</string>
+    <string name="app_website_url">http://www.florianweinaug.de</string>
+    <string name="app_feedback_url">mailto:fweinaug-apps@outlook.com?subject=Comics Collection</string>
+
+    <!-- Global -->
+    <string name="number_format">#%1$s</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <plurals name="comics">
+        <item quantity="one">%d comic</item>
+        <item quantity="other">%d comics</item>
+    </plurals>
+    <plurals name="issues">
+        <item quantity="one">%d issue</item>
+        <item quantity="other">%d issues</item>
+    </plurals>
+
+    <!-- Menus -->
+    <string name="menu_details">Details</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_add_comic">Add comic</string>
+    <string name="menu_add_issue">Add issue</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Comic Details -->
+    <string name="comic_detail_name">Name</string>
+    <string name="comic_detail_issues">Issues</string>
+    <string name="comic_detail_issues_count">%1$s (%2$s)</string>
+    <string name="comic_detail_publisher">Publisher</string>
+    <string name="comic_detail_concluded">Concluded</string>
+
+    <!-- Issue Details -->
+    <string name="issue_detail_title">Title</string>
+    <string name="issue_detail_summary">Summary</string>
+
+    <!-- Add Comic -->
+    <string name="comic_add_title">Add Comic</string>
+    <string name="comic_add_name">Name</string>
+    <string name="comic_add_publisher">Publisher</string>
+    <string name="comic_add_create">Create</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_info">Info</string>
+    <string name="settings_info_about">About this App</string>
+    <string name="settings_info_feedback">Send Feedback</string>
+    <string name="settings_info_website">Visit Website</string>
+    <string name="settings_info_rate">Rate this App</string>
+</resources>

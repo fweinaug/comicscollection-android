@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="de.florianweinaug.comicscollection.model.Comic" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/content_padding"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/Cover.Center"
+            imageUrl="@{item.imageUrl}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/comic_detail_name" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{item.name}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/comic_detail_issues" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{@string/comic_detail_issues_count(item.issuesTotal, item.issuesRead)}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="@{item.hasPublisher}">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/comic_detail_publisher" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{item.publisher.name}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/comic_detail_concluded" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{item.concluded}" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

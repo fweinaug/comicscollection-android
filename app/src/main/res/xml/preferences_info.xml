@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/settings_info_about">
+
+        <PreferenceScreen
+            android:key="app"
+            android:title="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:selectable="false" />
+
+        <PreferenceScreen
+            android:title="@string/settings_info_feedback">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/app_feedback_url" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="@string/settings_info_website">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/app_website_url" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+</PreferenceScreen>

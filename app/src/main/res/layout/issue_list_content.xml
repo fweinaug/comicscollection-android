@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="de.florianweinaug.comicscollection.model.Issue" />
+    </data>
+
+    <RelativeLayout
+        style="@style/ListItem"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/Cover"
+            android:id="@+id/image_cover"
+            imageUrl="@{item.imageUrl}" />
+
+        <TextView
+            style="@style/ListItem.Header"
+            android:id="@+id/text_name"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/image_cover"
+            android:text="@{item.title}" />
+
+        <TextView
+            style="@style/ListItem.Content"
+            android:id="@+id/text_number"
+            android:layout_below="@id/text_name"
+            android:layout_toEndOf="@id/image_cover"
+            android:text="@{@string/number_format(item.number)}" />
+
+        <ImageView
+            style="@style/Tick"
+            android:id="@+id/image_read"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{item.read}" />
+    </RelativeLayout>
+
+</layout>

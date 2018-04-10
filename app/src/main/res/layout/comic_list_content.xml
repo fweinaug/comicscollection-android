@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="de.florianweinaug.comicscollection.model.Comic" />
+    </data>
+
+    <RelativeLayout
+        style="@style/ListItem"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/Cover"
+            android:id="@+id/image_cover"
+            imageUrl="@{item.imageUrl}" />
+
+        <TextView
+            style="@style/ListItem.Header"
+            android:id="@+id/text_name"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/image_cover"
+            android:text="@{item.name}" />
+
+        <TextView
+            style="@style/ListItem.Content"
+            android:id="@+id/text_comics"
+            android:layout_toEndOf="@id/image_cover"
+            android:layout_below="@id/text_name"
+            android:text="@{@plurals/issues(item.issuesTotal, item.issuesTotal)}" />
+
+        <TextView
+            style="@style/ListItem.Content"
+            android:id="@+id/text_publisher"
+            android:layout_toEndOf="@id/image_cover"
+            android:layout_below="@id/text_comics"
+            android:text="@{item.publisher.name}"
+            android:visibility="@{item.hasPublisher}" />
+
+        <ImageView
+            style="@style/Tick"
+            android:id="@+id/image_read"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{item.read}" />
+
+    </RelativeLayout>
+</layout>

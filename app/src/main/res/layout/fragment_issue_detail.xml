@@ -1,0 +1,58 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="de.florianweinaug.comicscollection.model.Issue" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/content_padding"
+        android:orientation="vertical"
+        tools:context="de.florianweinaug.comicscollection.IssueDetailActivity$PlaceholderFragment">
+
+        <ImageView
+            style="@style/Cover.Center"
+            imageUrl="@{item.imageUrl}" />
+
+        <TextView
+            style="@style/Content"
+            android:text="@{@string/number_format(item.number)}"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="@{item.hasTitle}">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/issue_detail_title" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{item.title}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="@{item.hasSummary}">
+
+            <TextView
+                style="@style/Header"
+                android:text="@string/issue_detail_summary" />
+
+            <TextView
+                style="@style/Content"
+                android:text="@{item.summary}" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
