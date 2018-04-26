@@ -5,12 +5,11 @@ import android.app.Dialog
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
-import android.widget.ArrayAdapter
-import android.widget.CheckBox
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import de.florianweinaug.comicscollection.R
 import de.florianweinaug.comicscollection.model.Publisher
 import kotlinx.android.synthetic.main.dialog_comic_add.view.*
@@ -44,12 +43,28 @@ class AddComicDialog : DialogFragment() {
         val dialog = builder.create()
         dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
+        dialog.setOnShowListener { _ ->
+            val button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            button.isEnabled = false
+        }
+
+        editName.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable) {
+                val enabled = s.isNotEmpty()
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = enabled
+            }
+        })
+
         editName.requestFocus()
 
         return dialog
     }
 
-    private fun addComic(editName: TextView, spinnerPublisher: Spinner, checkConcluded: CheckBox) {
+    private fun addComic(editName: EditText, spinnerPublisher: Spinner, checkConcluded: CheckBox) {
         mViewModel.addComic(editName.text.toString(), spinnerPublisher.selectedItem as Publisher, checkConcluded.isChecked)
     }
 }
