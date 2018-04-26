@@ -24,7 +24,7 @@ object BindingAdapters {
         } else {
             val options = RequestOptions
                     .placeholderOf(R.drawable.placeholder)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .skipMemoryCache(false)
 
             Glide.with(view.context)
