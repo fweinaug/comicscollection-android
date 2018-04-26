@@ -7,6 +7,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import de.florianweinaug.comicscollection.ComicApp
+import de.florianweinaug.comicscollection.R
 
 class SplashActivity : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class SplashActivity : AppCompatActivity() {
         {
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()
         }
     }
