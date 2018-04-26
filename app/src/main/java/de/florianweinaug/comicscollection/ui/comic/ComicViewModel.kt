@@ -77,7 +77,9 @@ class ComicViewModel : ViewModel() {
     inner class MarkAsReadAsyncTask(private val comic: Comic) : AsyncTask<Void, Void, Void>() {
 
         override fun doInBackground(vararg params: Void?): Void? {
-            repository.setRead(comic, null, true)
+            val read = !comic.read
+
+            repository.setRead(comic, null, read)
 
             return null
         }
