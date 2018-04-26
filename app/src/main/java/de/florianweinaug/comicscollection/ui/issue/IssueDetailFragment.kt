@@ -12,21 +12,26 @@ class IssueDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val item = arguments?.getSerializable(ARG_ISSUE) as Issue
+        val viewModel = IssueViewModel.create(this)
+
+        val id = arguments?.getInt(ARG_ISSUE_ID)!!
+        viewModel.setId(id)
+
         val binding = FragmentIssueDetailBinding.inflate(inflater, container, false)
 
-        binding.item = item
+        binding.item = viewModel
+        binding.setLifecycleOwner(this)
 
         return binding.root
     }
 
     companion object {
-        private const val ARG_ISSUE = "issue"
+        private const val ARG_ISSUE_ID = "issue_id"
 
         fun newInstance(issue: Issue): IssueDetailFragment {
             val fragment = IssueDetailFragment()
             val args = Bundle()
-            args.putSerializable(ARG_ISSUE, issue)
+            args.putInt(ARG_ISSUE_ID, issue.id)
             fragment.arguments = args
             return fragment
         }

@@ -1,58 +1,65 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
             name="item"
-            type="de.florianweinaug.comicscollection.model.Issue" />
+            type="de.florianweinaug.comicscollection.ui.issue.IssueViewModel" />
     </data>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/content_padding"
-        android:orientation="vertical"
-        tools:context="de.florianweinaug.comicscollection.IssueDetailActivity$PlaceholderFragment">
-
-        <ImageView
-            style="@style/Cover.Center"
-            imageUrl="@{item.imageUrl}" />
-
-        <TextView
-            style="@style/Content"
-            android:text="@{@string/number_format(item.number)}"
-            android:textAlignment="center" />
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="de.florianweinaug.comicscollection.IssueDetailFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/content_padding"
             android:orientation="vertical"
-            android:visibility="@{item.hasTitle}">
+            android:descendantFocusability="blocksDescendants">
 
-            <TextView
-                style="@style/Header"
-                android:text="@string/issue_detail_title" />
+            <ImageView
+                style="@style/Cover.Center"
+                imageUrl="@{item.issue.imageUrl}" />
 
             <TextView
                 style="@style/Content"
-                android:text="@{item.title}" />
+                android:text="@{@string/number_format(item.issue.number)}"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{item.issue.hasTitle}">
+
+                <TextView
+                    style="@style/Header"
+                    android:text="@string/issue_detail_title" />
+
+                <TextView
+                    style="@style/Content"
+                    android:text="@{item.issue.title}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{item.issue.hasSummary}">
+
+                <TextView
+                    style="@style/Header"
+                    android:text="@string/issue_detail_summary" />
+
+                <TextView
+                    style="@style/Content"
+                    android:text="@{item.issue.summary}" />
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:visibility="@{item.hasSummary}">
-
-            <TextView
-                style="@style/Header"
-                android:text="@string/issue_detail_summary" />
-
-            <TextView
-                style="@style/Content"
-                android:text="@{item.summary}" />
-        </LinearLayout>
-    </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 </layout>

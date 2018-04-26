@@ -24,6 +24,7 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_add_comic">Add comic</string>
     <string name="menu_add_issue">Add issue</string>
+    <string name="menu_edit_issue">Edit issue</string>
 
     <!-- Dialogs -->
     <string name="dialog_cancel">Cancel</string>
@@ -39,11 +40,17 @@
     <string name="issue_detail_title">Title</string>
     <string name="issue_detail_summary">Summary</string>
 
-    <!-- Add Comic -->
-    <string name="comic_add_title">Add Comic</string>
+    <!-- Add Comic Dialog -->
+    <string name="comic_add_header">Add Comic</string>
     <string name="comic_add_name">Name</string>
     <string name="comic_add_publisher">Publisher</string>
     <string name="comic_add_create">Create</string>
+
+    <!-- Edit Issue Dialog -->
+    <string name="issue_edit_header">Edit Issue</string>
+    <string name="issue_edit_title">Title</string>
+    <string name="issue_edit_summary">Summary</string>
+    <string name="issue_edit_update">Update</string>
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>

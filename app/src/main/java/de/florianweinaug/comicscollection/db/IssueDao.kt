@@ -10,6 +10,9 @@ abstract class IssueDao {
     @Query("select * from issue where comicId=:id order by number")
     abstract fun getIssuesByComicId(id: Int): LiveData<List<Issue>>
 
+    @Query("select * from issue where id=:id")
+    abstract fun getIssueById(id: Int) : LiveData<Issue>
+
     @Query("delete from issue")
     abstract fun deleteAll()
 

@@ -32,6 +32,10 @@ class ComicRepository
         return issueDao.getIssuesByComicId(id)
     }
 
+    fun getIssue(id: Int) : LiveData<Issue> {
+        return issueDao.getIssueById(id)
+    }
+
     fun getPublishers() : LiveData<List<Publisher>> {
         return publisherDao.getPublishers()
     }
@@ -81,6 +85,14 @@ class ComicRepository
         if (updatedComic != null) {
             comicDao.update(updatedComic)
             issueDao.insert(updatedComic.issues)
+        }
+    }
+
+    fun updateIssue(issue: Issue, title: String, summary: String) {
+        val updatedIssue = comicApi.updateIssue(profileId, issue.id, title, summary).execute().body()
+
+        if (updatedIssue != null) {
+            issueDao.update(updatedIssue)
         }
     }
 

@@ -37,7 +37,7 @@ class AddComicDialog : DialogFragment() {
 
         val builder = AlertDialog.Builder(activity)
         builder.setView(view)
-                .setTitle(R.string.comic_add_title)
+                .setTitle(R.string.comic_add_header)
                 .setPositiveButton(R.string.comic_add_create, { _, _ -> addComic(editName, spinnerPublisher, checkConcluded) })
                 .setNegativeButton(R.string.dialog_cancel, null)
 

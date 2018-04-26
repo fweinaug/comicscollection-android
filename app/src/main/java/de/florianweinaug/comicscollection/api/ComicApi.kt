@@ -26,6 +26,11 @@ interface ComicApi {
             : Call<Comic>
 
     @FormUrlEncoded
+    @POST("issue/update")
+    fun updateIssue(@Query("profileId") profileId: Int, @Query("issueId") issueId: Int, @Field("title") title: String, @Field("summary") summary: String)
+            : Call<Issue>
+
+    @FormUrlEncoded
     @POST("comic/read")
     fun setRead(@Field("profileId") profileId: Int, @Field("comicId") comicId: Int,
                 @Field("issueId") issueId: Int?, @Field("read") read: Int): Call<Comic>

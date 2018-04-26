@@ -1,7 +1,6 @@
 package de.florianweinaug.comicscollection
 
 import android.app.Application
-import android.os.Build
 import de.florianweinaug.comicscollection.di.ApiModule
 import de.florianweinaug.comicscollection.di.AppComponent
 import de.florianweinaug.comicscollection.di.AppModule

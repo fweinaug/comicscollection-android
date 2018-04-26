@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_issue_detail.*
 
 class IssueDetailActivity : AppCompatActivity() {
 
-    private lateinit var mViewModel: IssueViewModel
+    private lateinit var mViewModel: IssuesViewModel
     private lateinit var mPagerAdapter: IssuePagerAdapter
 
     private var mIssueId: Int = 0
@@ -50,7 +50,7 @@ class IssueDetailActivity : AppCompatActivity() {
     }
 
     private fun createViewModel(comicId: Int) {
-        mViewModel = IssueViewModel.create(this)
+        mViewModel = IssuesViewModel.create(this)
 
         mViewModel.getComic()
                 .observe(this, Observer { toolbar_layout?.title = it?.name })
@@ -83,6 +83,11 @@ class IssueDetailActivity : AppCompatActivity() {
             when (item.itemId) {
                 android.R.id.home -> {
                     NavUtils.navigateUpFromSameTask(this)
+                    true
+                }
+                R.id.menu_edit_issue -> {
+                    val fragment = EditIssueDialog()
+                    fragment.show(supportFragmentManager, null)
                     true
                 }
                 else -> super.onOptionsItemSelected(item)
