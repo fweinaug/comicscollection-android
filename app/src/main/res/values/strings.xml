@@ -19,6 +19,10 @@
         <item quantity="other">%d issues</item>
     </plurals>
 
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Open navigation</string>
+    <string name="navigation_drawer_close">Close navigation</string>
+
     <!-- Menus -->
     <string name="menu_details">Details</string>
     <string name="menu_settings">Settings</string>
