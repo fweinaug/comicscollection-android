@@ -1,0 +1,67 @@
+<resources>
+
+    <!-- App -->
+    <string name="app_name">Comics Collection</string>
+    <string name="app_name_launcher">Comics</string>
+    <string name="app_website_url">http://www.florianweinaug.de</string>
+    <string name="app_feedback_url">mailto:fweinaug-apps@outlook.com?subject=Comics Collection</string>
+
+    <!-- Global -->
+    <string name="number_format">#%1$s</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <plurals name="comics">
+        <item quantity="one">%d Comic</item>
+        <item quantity="other">%d Comics</item>
+    </plurals>
+    <plurals name="issues">
+        <item quantity="one">%d Ausgabe</item>
+        <item quantity="other">%d Ausgaben</item>
+    </plurals>
+
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Navigation öffnen</string>
+    <string name="navigation_drawer_close">Navigation schließen</string>
+
+    <!-- Menus -->
+    <string name="menu_details">Details</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="menu_add_comic">Comic hinzufügen</string>
+    <string name="menu_add_issue">Ausgabe hinzufügen</string>
+    <string name="menu_edit_issue">Ausgabe bearbeiten</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_cancel">Abbrechen</string>
+
+    <!-- Comic Details -->
+    <string name="comic_detail_name">Name</string>
+    <string name="comic_detail_issues">Ausgaben</string>
+    <string name="comic_detail_issues_count">%1$s (%2$s)</string>
+    <string name="comic_detail_publisher">Verlag</string>
+    <string name="comic_detail_concluded">Abgeschlossen</string>
+
+    <!-- Issue Details -->
+    <string name="issue_detail_title">Titel</string>
+    <string name="issue_detail_summary">Zusammenfassung</string>
+
+    <!-- Add Comic Dialog -->
+    <string name="comic_add_header">Comic hinzufügen</string>
+    <string name="comic_add_name">Name</string>
+    <string name="comic_add_publisher">Verlag</string>
+    <string name="comic_add_concluded">Abgeschlossen</string>
+    <string name="comic_add_create">Erstellen</string>
+
+    <!-- Edit Issue Dialog -->
+    <string name="issue_edit_header">Ausgabe bearbeiten</string>
+    <string name="issue_edit_title">Titel</string>
+    <string name="issue_edit_summary">Zusammenfassung</string>
+    <string name="issue_edit_update">Ändern</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_info">Info</string>
+    <string name="settings_info_about">Über diese App</string>
+    <string name="settings_info_feedback">Feedback senden</string>
+    <string name="settings_info_website">Website besuchen</string>
+    <string name="settings_info_rate">Diese App bewerten</string>
+</resources>

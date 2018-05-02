@@ -48,6 +48,7 @@
     <string name="comic_add_header">Add Comic</string>
     <string name="comic_add_name">Name</string>
     <string name="comic_add_publisher">Publisher</string>
+    <string name="comic_add_concluded">Concluded</string>
     <string name="comic_add_create">Create</string>
 
     <!-- Edit Issue Dialog -->
