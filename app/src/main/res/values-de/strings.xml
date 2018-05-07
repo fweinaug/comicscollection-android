@@ -7,7 +7,9 @@
     <string name="app_feedback_url">mailto:fweinaug-apps@outlook.com?subject=Comics Collection</string>
 
     <!-- Global -->
-    <string name="number_format">#%1$s</string>
+    <string name="number_format">%1$d</string>
+    <string name="decimal_format">%1.1f</string>
+    <string name="issue_number_format">#%1$s</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
     <plurals name="comics">
@@ -29,6 +31,7 @@
     <string name="menu_add_comic">Comic hinzufügen</string>
     <string name="menu_add_issue">Ausgabe hinzufügen</string>
     <string name="menu_edit_issue">Ausgabe bearbeiten</string>
+    <string name="menu_statistics">Statistiken</string>
 
     <!-- Dialogs -->
     <string name="dialog_cancel">Abbrechen</string>
@@ -64,4 +67,20 @@
     <string name="settings_info_feedback">Feedback senden</string>
     <string name="settings_info_website">Website besuchen</string>
     <string name="settings_info_rate">Diese App bewerten</string>
+
+    <!-- Statistics -->
+    <string name="statistics_title">Statistiken</string>
+    <string name="statistics_comics">Comics</string>
+    <string name="statistics_comics_total">Gesamt</string>
+    <string name="statistics_comics_concluded">Abgeschlossen</string>
+    <string name="statistics_comics_read">Gelesen</string>
+    <string name="statistics_comics_read_percentage">Gelesen (%)</string>
+    <string name="statistics_issues">Ausgaben</string>
+    <string name="statistics_issues_total">Gesamt</string>
+    <string name="statistics_issues_average">Durchschnitt</string>
+    <string name="statistics_issues_read">Gelesen</string>
+    <string name="statistics_reading_progress">Lesefortschritt</string>
+    <string name="statistics_publishers">Verlage</string>
+    <string name="statistics_publishers_distribution">Verteilung nach Verlag</string>
+    <string name="statistics_empty">Keine Daten vorhanden</string>
 </resources>

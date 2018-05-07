@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
 import de.florianweinaug.comicscollection.model.Comic
+import de.florianweinaug.comicscollection.model.PublisherCount
 
 @Dao
 abstract class ComicDao {
@@ -19,6 +20,18 @@ abstract class ComicDao {
     @Query("delete from comic")
     abstract fun deleteAll()
 
+    @Query("select count(*) from comic")
+    abstract fun countAll() : Int
+
+    @Query("select publisher_name as name, count(*) as count from comic group by publisher_name")
+    abstract fun countAllByPublisher() : List<PublisherCount>
+
+    @Query("select count(*) from comic where concluded = 1")
+    abstract fun countConcluded() : Int
+
+    @Query("select count(*) from comic where issuesTotal > 0 and issuesTotal = issuesRead")
+    abstract fun countRead() : Int
+
     @Insert
     abstract fun insert(comic: Comic)
 
@@ -28,4 +41,3 @@ abstract class ComicDao {
     @Update
     abstract fun update(comic: Comic)
 }
-

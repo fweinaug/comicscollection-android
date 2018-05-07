@@ -29,7 +29,7 @@
             android:id="@+id/text_number"
             android:layout_below="@id/text_name"
             android:layout_toEndOf="@id/image_cover"
-            android:text="@{@string/number_format(item.number)}" />
+            android:text="@{@string/issue_number_format(item.number)}" />
 
         <ImageView
             style="@style/Tick"

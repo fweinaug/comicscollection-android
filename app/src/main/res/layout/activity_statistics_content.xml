@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.statistics.StatisticsActivity"
+    tools:showIn="@layout/activity_statistics"
+    android:orientation="vertical"
+    android:padding="@dimen/content_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/content_padding"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    style="@style/Header"
+                    android:layout_column="1"
+                    android:layout_span="2"
+                    android:background="#DCDCDC"
+                    android:text="@string/statistics_comics"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_comics_total"
+                    android:padding="3dip" />
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/comics_total"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_comics_concluded"
+                    android:padding="3dip" />
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/comics_concluded"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_comics_read"
+                    android:padding="3dip" />
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/comics_read"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:paddingStart="@dimen/content_padding"
+            android:paddingEnd="0dp"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    style="@style/Header"
+                    android:layout_column="1"
+                    android:layout_span="2"
+                    android:background="#DCDCDC"
+                    android:text="@string/statistics_issues"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_issues_total"
+                    android:textIsSelectable="false"
+                    android:padding="3dip" />
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/issues_total"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_issues_average"
+                    android:padding="3dip" />
+
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/issues_average"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    style="@style/Content"
+                    android:layout_column="1"
+                    android:text="@string/statistics_issues_read"
+                    android:padding="3dip" />
+
+                <TextView
+                    style="@style/Content"
+                    android:id="@+id/issues_read"
+                    android:gravity="end"
+                    android:padding="3dip" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/Header"
+        android:background="#DCDCDC"
+        android:text="@string/statistics_reading_progress"
+        android:textAlignment="center" />
+
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/reading_progress_chart"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <TextView
+        style="@style/Header"
+        android:background="#DCDCDC"
+        android:text="@string/statistics_publishers_distribution"
+        android:textAlignment="center" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/publishers_distribution_chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

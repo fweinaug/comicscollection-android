@@ -12,6 +12,7 @@ import android.view.*
 import de.florianweinaug.comicscollection.R
 import de.florianweinaug.comicscollection.model.Comic
 import de.florianweinaug.comicscollection.ui.settings.SettingsActivity
+import de.florianweinaug.comicscollection.ui.statistics.StatisticsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_content.*
 import kotlinx.android.synthetic.main.comic_list.*
@@ -87,6 +88,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.nav_statistics -> {
+                val intent = Intent(this, StatisticsActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)

@@ -16,6 +16,12 @@ abstract class IssueDao {
     @Query("delete from issue")
     abstract fun deleteAll()
 
+    @Query("select count(*) from issue")
+    abstract fun countAll() : Int
+
+    @Query("select count(*) from issue where read = 1")
+    abstract fun countRead() : Int
+
     @Insert
     abstract fun insert(issue: Issue)
 

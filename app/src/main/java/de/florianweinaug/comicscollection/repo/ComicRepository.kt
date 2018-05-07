@@ -10,6 +10,7 @@ import de.florianweinaug.comicscollection.db.IssueDao
 import de.florianweinaug.comicscollection.db.PublisherDao
 import de.florianweinaug.comicscollection.model.Issue
 import de.florianweinaug.comicscollection.model.Publisher
+import de.florianweinaug.comicscollection.model.Statistics
 import okhttp3.MediaType
 import java.io.File
 import okhttp3.RequestBody
@@ -103,6 +104,18 @@ class ComicRepository
             comicDao.update(updatedComic)
             issueDao.update(updatedComic.issues)
         }
+    }
+
+    fun getStatistics() : Statistics {
+        val comicsTotal = comicDao.countAll()
+        val comicsRead = comicDao.countRead()
+        val comicsConcluded = comicDao.countConcluded()
+        val publisherCount = comicDao.countAllByPublisher()
+        val issuesTotal = issueDao.countAll()
+        val issuesRead = issueDao.countRead()
+
+        return Statistics(comicsTotal, comicsRead, comicsConcluded,
+                issuesTotal, issuesRead, publisherCount)
     }
 
     companion object {

@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <group android:id="@+id/group_nav">
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@drawable/ic_menu_statistics"
+            android:title="@string/menu_statistics" />
+    </group>
+
     <group android:id="@+id/group_extras">
         <item
             android:id="@+id/nav_settings"

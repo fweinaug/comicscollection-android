@@ -5,6 +5,7 @@ import de.florianweinaug.comicscollection.ui.comic.ComicViewModel
 import de.florianweinaug.comicscollection.ui.issue.IssueViewModel
 import de.florianweinaug.comicscollection.ui.issue.IssuesViewModel
 import de.florianweinaug.comicscollection.ui.main.MainViewModel
+import de.florianweinaug.comicscollection.ui.statistics.StatisticsViewModel
 import javax.inject.Singleton
 
 @Singleton
@@ -17,4 +18,6 @@ interface AppComponent {
     fun inject(issuesViewModel: IssuesViewModel)
 
     fun inject(issueViewModel: IssueViewModel)
+
+    fun inject(statisticsViewModel: StatisticsViewModel)
 }

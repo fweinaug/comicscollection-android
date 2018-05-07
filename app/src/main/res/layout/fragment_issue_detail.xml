@@ -28,7 +28,7 @@
 
             <TextView
                 style="@style/Content"
-                android:text="@{@string/number_format(item.issue.number)}"
+                android:text="@{@string/issue_number_format(item.issue.number)}"
                 android:textAlignment="center" />
 
             <LinearLayout
