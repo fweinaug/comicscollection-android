@@ -15,9 +15,12 @@ class ComicApp : Application() {
                 .appModule(AppModule(this))
                 .apiModule(ApiModule(BuildConfig.API_URL))
                 .build()
+
+        settings = AppSettings(this)
     }
 
     companion object {
         lateinit var appComponent: AppComponent
+        lateinit var settings: AppSettings
     }
 }

@@ -16,4 +16,7 @@ class Comic(id: Int = 0, var name: String = "", var issuesTotal: Short = 0,
 
     val read: Boolean
         get() = this.issuesTotal > 0 && this.issuesTotal == this.issuesRead
+
+    val isSeries: Boolean
+        get() = this.issuesTotal > 1 || !this.concluded
 }

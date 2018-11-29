@@ -26,18 +26,20 @@
 
         <TextView
             style="@style/ListItem.Content"
-            android:id="@+id/text_comics"
+            android:id="@+id/text_publisher"
             android:layout_toEndOf="@id/image_cover"
             android:layout_below="@id/text_name"
-            android:text="@{@plurals/issues(item.issuesTotal, item.issuesTotal)}" />
+            android:text="@{item.publisher.name}"
+            android:visibility="@{item.hasPublisher}" />
 
         <TextView
             style="@style/ListItem.Content"
-            android:id="@+id/text_publisher"
+            android:id="@+id/text_comics"
+            android:layout_alignParentBottom="true"
             android:layout_toEndOf="@id/image_cover"
-            android:layout_below="@id/text_comics"
-            android:text="@{item.publisher.name}"
-            android:visibility="@{item.hasPublisher}" />
+            android:paddingBottom="15dp"
+            android:text="@{item.issuesRead + `/` + item.issuesTotal}"
+            android:visibility="@{item.isSeries}" />
 
         <ImageView
             style="@style/Tick"

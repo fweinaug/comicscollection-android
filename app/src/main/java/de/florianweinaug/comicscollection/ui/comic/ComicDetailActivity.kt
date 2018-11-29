@@ -73,6 +73,14 @@ class ComicDetailActivity : CameraActivity() {
                     fragment.show(supportFragmentManager, null)
                     true
                 }
+                R.id.menu_view_list -> {
+                    mViewModel.setView(IssuesView.List)
+                    true
+                }
+                R.id.menu_view_grid -> {
+                    mViewModel.setView(IssuesView.Grid)
+                    true
+                }
                 else -> super.onOptionsItemSelected(item)
             }
 }

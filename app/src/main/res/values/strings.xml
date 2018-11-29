@@ -42,6 +42,9 @@
     <string name="comic_detail_issues_count">%1$s (%2$s)</string>
     <string name="comic_detail_publisher">Publisher</string>
     <string name="comic_detail_concluded">Concluded</string>
+    <string name="comic_detail_view">View</string>
+    <string name="comic_detail_view_list">List</string>
+    <string name="comic_detail_view_grid">Grid</string>
 
     <!-- Issue Details -->
     <string name="issue_detail_title">Title</string>

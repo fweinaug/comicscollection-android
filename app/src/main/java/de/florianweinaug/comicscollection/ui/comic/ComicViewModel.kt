@@ -18,6 +18,7 @@ class ComicViewModel : ViewModel() {
     private val comic: LiveData<Comic>
     private val issues: LiveData<List<Issue>>
     private val read: LiveData<Boolean>
+    private val issuesView: MutableLiveData<IssuesView> = MutableLiveData()
 
     init {
         comic = Transformations.switchMap(comicId) {
@@ -31,6 +32,8 @@ class ComicViewModel : ViewModel() {
         read = Transformations.map(comic) {
             it.read
         }
+
+        setView(ComicApp.settings.issuesView)
     }
 
     @Inject
@@ -60,6 +63,18 @@ class ComicViewModel : ViewModel() {
 
     fun markAsRead() {
         MarkAsReadAsyncTask(comic.value!!).execute()
+    }
+
+    fun getView(): MutableLiveData<IssuesView> {
+        return issuesView
+    }
+
+    fun setView(view: IssuesView) {
+        if (issuesView.value != view) {
+            issuesView.value = view
+
+            ComicApp.settings.issuesView = view
+        }
     }
 
     @SuppressLint("StaticFieldLeak")
